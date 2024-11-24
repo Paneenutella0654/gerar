@@ -325,41 +325,55 @@
       
 
       //Codice realtivo alla generazione della mappa generale con marker cliccabili
-      var mappa_generale = document.getElementById("mappa_generale");
-      mappa_generale.className = "mappa_generale";
-      
-      var map = L.map('mappa_generale', {
-        doubleClickZoom: false,
-        boxZoom: false,
-        zoomControl: false,
-        keyboard: false,
-      }).setView([40.518599706806775, 15.924462653196347], 9.5);
+     // Ottieni l'elemento della mappa e configura la classe
+var mappa_generale = document.getElementById("mappa_generale");
+mappa_generale.className = "mappa_generale";
 
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-      }).addTo(map);
+// Inizializza la mappa con le opzioni esistenti
+var map = L.map('mappa_generale', {
+    doubleClickZoom: false,
+    boxZoom: false,
+    zoomControl: false,
+    keyboard: false,
+}).setView([40.518599706806775, 15.924462653196347], 9.5);
 
+// Aggiungi il layer di base (OpenStreetMap)
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+}).addTo(map);
 
+// Funzione per aggiungere un file GeoJSON alla mappa
+function addGeoJSONLayer(url, styleOptions, popupPropertyName) {
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            L.geoJSON(data, {
+                style: styleOptions,
+                onEachFeature: function (feature, layer) {
+                    // Mostra un popup con la proprietà specificata
+                    if (feature.properties && feature.properties[popupPropertyName]) {
+                        layer.bindPopup(`${popupPropertyName}: ${feature.properties[popupPropertyName]}`);
+                    }
+                }               
+            }).addTo(map);
+        })
+        .catch(error => console.error(`Errore nel caricamento del GeoJSON (${url}):`, error));
+}
 
-    fetch('/static/geojson/filtered_comuni.geojson') // Percorso del file GeoJSON.
-    .then(response => response.json())
-    .then(data => {
-        L.geoJSON(data, {
-            style: {
-                color: "#ff7800", // Colore dei confini.
-                weight: 2,       // Spessore dei confini.
-                opacity: 0.65    // Opacità.
-            },
-            onEachFeature: function (feature, layer) {
-                // Mostra il nome del comune al clic.
-                console.log(feature.properties);
-                //if (feature.properties && feature.properties.nome) {
-                    layer.bindPopup("Comune: " + feature.properties.name);
-                //}
-            }
-        }).addTo(map);
-    })
-    .catch(error => console.error("Errore nel caricamento del GeoJSON:", error));
+// Aggiungi il primo file GeoJSON (Comuni)
+addGeoJSONLayer(
+    '/static/geojson/filtered_comuni.geojson',
+    { color: "#ff7800", weight: 2, opacity: 0.65 }, // Stile per i confini dei comuni
+    'name' // Nome del campo da visualizzare nel popup
+);
+
+// Aggiungi il secondo file GeoJSON (Stazioni di rilevamento)
+addGeoJSONLayer(
+    '/static/geojson/stazioni_di_rilevamento.geojson',
+    { color: "#0088ff", weight: 2, opacity: 0.75 }, // Stile per le stazioni di rilevamento
+    'station_name' // Nome del campo da visualizzare nel popup
+);
+
 
       function scrollaVersoMappaGenerale() {
         var mappaGenerale = document.getElementById("mappa_generale");

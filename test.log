@@ -14461,3 +14461,183 @@
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 523-329-823
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+127.0.0.1 - - [23/Nov/2024 10:34:20] "[32mGET /listaSensori HTTP/1.1[0m" 302 -
+127.0.0.1 - - [23/Nov/2024 10:34:20] "GET /login?next=%2FlistaSensori HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:34:20] "GET /static/css/auth.css HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:34:20] "GET /static/javascript/auth.js HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:34:21] "[33mGET /static/images/top.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [23/Nov/2024 10:34:21] "[33mGET /static/images/top.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [23/Nov/2024 10:34:27] "[32mPOST /login?next=%2FlistaSensori HTTP/1.1[0m" 302 -
+127.0.0.1 - - [23/Nov/2024 10:34:27] "GET /listaSensori HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/vendors/typicons.font/font/typicons.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/vendors/css/vendor.bundle.base.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/css/vertical-layout-light/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/vendors/js/vendor.bundle.base.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/js/off-canvas.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/vendors/typicons.font/font/typicons.woff HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/fonts/Roboto/Roboto-Light.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/fonts/Roboto/Roboto-Regular.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/js/hoverable-collapse.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/js/template.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/js/todolist.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/vendors/progressbar.js/progressbar.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:28] "[36mGET /static/vendors/chart.js/Chart.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:29] "[36mGET /static/geojson/filtered_comuni.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:34:29] "GET /static/geojson/stazioni_di_rilevamento.geojson HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:36:13] "GET /listaSensori HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:36:13] "[36mGET /static/vendors/typicons.font/font/typicons.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/css/vertical-layout-light/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/vendors/css/vendor.bundle.base.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/vendors/js/vendor.bundle.base.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/js/off-canvas.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/vendors/typicons.font/font/typicons.woff HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/fonts/Roboto/Roboto-Light.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/fonts/Roboto/Roboto-Regular.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/js/hoverable-collapse.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/js/template.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/js/todolist.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/vendors/progressbar.js/progressbar.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:14] "[36mGET /static/vendors/chart.js/Chart.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:15] "[36mGET /static/geojson/filtered_comuni.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:15] "[36mGET /static/geojson/stazioni_di_rilevamento.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:15] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:38] "GET /listaSensori HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/vendors/typicons.font/font/typicons.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/vendors/css/vendor.bundle.base.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/css/vertical-layout-light/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/vendors/js/vendor.bundle.base.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/vendors/typicons.font/font/typicons.woff HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/fonts/Roboto/Roboto-Light.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/fonts/Roboto/Roboto-Regular.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/js/off-canvas.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/js/hoverable-collapse.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/js/template.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/js/todolist.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/vendors/progressbar.js/progressbar.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:39] "[36mGET /static/vendors/chart.js/Chart.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:40] "[36mGET /static/geojson/filtered_comuni.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:40] "[36mGET /static/geojson/stazioni_di_rilevamento.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:36:40] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:28] "GET /listaSensori HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:37:28] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:28] "[36mGET /static/vendors/typicons.font/font/typicons.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:28] "[36mGET /static/vendors/css/vendor.bundle.base.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:28] "[36mGET /static/css/vertical-layout-light/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:28] "[36mGET /static/vendors/js/vendor.bundle.base.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:28] "[36mGET /static/vendors/typicons.font/font/typicons.woff HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/fonts/Roboto/Roboto-Light.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/fonts/Roboto/Roboto-Regular.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/js/off-canvas.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/js/hoverable-collapse.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/js/template.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/js/todolist.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/vendors/progressbar.js/progressbar.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/vendors/chart.js/Chart.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/geojson/filtered_comuni.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/geojson/stazioni_di_rilevamento.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:29] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "GET /listaSensori HTTP/1.1" 200 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/vendors/css/vendor.bundle.base.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/vendors/typicons.font/font/typicons.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/css/vertical-layout-light/style.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/vendors/js/vendor.bundle.base.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/vendors/typicons.font/font/typicons.woff HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/fonts/Roboto/Roboto-Regular.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/js/off-canvas.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/fonts/Roboto/Roboto-Bold.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/fonts/Roboto/Roboto-Light.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:48] "[36mGET /static/js/hoverable-collapse.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:49] "[36mGET /static/js/template.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:49] "[36mGET /static/js/settings.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:49] "[36mGET /static/js/todolist.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:49] "[36mGET /static/vendors/progressbar.js/progressbar.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:49] "[36mGET /static/vendors/chart.js/Chart.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:49] "[36mGET /static/geojson/filtered_comuni.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:49] "[36mGET /static/geojson/stazioni_di_rilevamento.geojson HTTP/1.1[0m" 304 -
+127.0.0.1 - - [23/Nov/2024 10:37:49] "[36mGET /static/images/Logo.png HTTP/1.1[0m" 304 -
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823
+ * Detected change in 'c:\\Users\\gerar\\Clone git\\gerar\\MeteoAnalytics\\Create_csv.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 523-329-823

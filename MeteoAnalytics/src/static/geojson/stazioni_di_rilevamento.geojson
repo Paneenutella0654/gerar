@@ -1,0 +1,171 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.722500, 41.069444]
+        },
+        "properties": {
+          "id": "949900",
+          "station_name": "San Nicola di Melfi"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.787500, 41.045833]
+        },
+        "properties": {
+          "id": "950500",
+          "station_name": "Lavello"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.639722, 40.983888]
+        },
+        "properties": {
+          "id": "950400",
+          "station_name": "Melfi"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.795000, 40.649166]
+        },
+        "properties": {
+          "id": "950200",
+          "station_name": "Potenza - Viale Firenze"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.872777, 40.643888]
+        },
+        "properties": {
+          "id": "950300",
+          "station_name": "Potenza - S. L. Branca"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.796388, 40.627777]
+        },
+        "properties": {
+          "id": "950100",
+          "station_name": "Potenza - Viale dell'Unicef"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.811666, 40.625277]
+        },
+        "properties": {
+          "id": "950000",
+          "station_name": "Potenza - C.da Rossellino"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.867222, 40.324166]
+        },
+        "properties": {
+          "id": "951200",
+          "station_name": "Viggiano - Masseria de Blasiis"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.900555, 40.334722]
+        },
+        "properties": {
+          "id": "951100",
+          "station_name": "Viggiano 1"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.904444, 40.313888]
+        },
+        "properties": {
+          "id": "950900",
+          "station_name": "Viggiano"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.954722, 40.315555]
+        },
+        "properties": {
+          "id": "951000",
+          "station_name": "Viggiano - Costa Molina Sud 1"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15.891388, 40.288333]
+        },
+        "properties": {
+          "id": "951300",
+          "station_name": "Grumento 3"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [16.546944, 40.686388]
+        },
+        "properties": {
+          "id": "950700",
+          "station_name": "La Martella"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [16.496111, 40.485833]
+        },
+        "properties": {
+          "id": "950600",
+          "station_name": "Ferrandina"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [16.548333, 40.420277]
+        },
+        "properties": {
+          "id": "950800",
+          "station_name": "Pisticci"
+        }
+      }
+    ]
+  }
+  
