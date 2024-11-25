@@ -263,3 +263,20 @@ def visitaeventi():
             return jsonify({"success": True, "data": rilevazioni})
         elif rilevazioni == None:
             return jsonify({"success": False})
+        
+        
+        
+# Route per la GIS
+
+@app.route("/selettore", methods=["GET", "POST"])
+def selettore():
+    if request.method == "POST":
+        dati = request.get_json()
+        
+        parametro_selezionato = dati.get("parametro")
+        intervallo_temporale = dati.get("intervallo")
+        range_data = dati.get("range_data")
+        print(parametro_selezionato, intervallo_temporale, range_data)
+        #return render_template("listaSensori.html")
+        return jsonify({'status': 'success', 'message': 'Dati ricevuti correttamente!'})
+    return render_template("listaSensori.html")

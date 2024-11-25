@@ -18,6 +18,12 @@
   <link rel="stylesheet" href="/static/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="/static/images/Logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.0/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.0/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+ 
+
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -27,7 +33,7 @@
       width: 100%;
     }
     .mappa_generale {
-      height: 1200px;
+      height: 800px;
       width: 100%;
     }
     .padding_perso{
@@ -50,14 +56,15 @@
       color: white;
   }
 
-  .nazione {
-    text-align: center;
-    max-width: 80%; /* Imposta la larghezza massima */
-    overflow-y: auto; /* Abilita lo scrolling verticale */
-    height: 50vh; /* Imposta l'altezza massima */
-    padding: 20px;
-    border-radius: 8px;
-}
+  .controll {
+      text-align: center;
+      max-width: 80%; /* Imposta la larghezza massima */
+      overflow-y: auto; /* Abilita lo scrolling verticale */
+      height: 50vh; /* Imposta l'altezza massima */
+      padding: 20px;
+      border-radius: 8px;
+  }
+
   </style>
 </head>
 
@@ -90,67 +97,8 @@
             <!--contenuto dropdown notifiche-->
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list">
               <p class="mb-0 sidebar-name float-left dropdown-header">Seleziona la nazione che vuoi visualizzare</p>
-              <div class="container nazione ">
-                <div>
-                  <a href="listaSensori?nazione=italia"
-                  class="country-button" onclick="toggleSelection(event)">Italia</a>
-                  <a href="listaSensori?nazione=spagna"
-                  class="country-button" onclick="toggleSelection(event)">Spagna</a>
-                  <a href="listaSensori?nazione=albania"
-                  class="country-button" onclick="toggleSelection(event)">Albania</a>
-                  <a href="listaSensori?nazione=grecia"
-                  class="country-button" onclick="toggleSelection(event)">Grecia</a>
-                  <a href="listaSensori?nazione=malta"
-                  class="country-button" onclick="toggleSelection(event)">Malta</a>
-                  <a href="listaSensori?nazione=bulgaria"
-                  class="country-button" onclick="toggleSelection(event)">Bulgaria</a>
-                  <a href="listaSensori?nazione=turchia"
-                  class="country-button" onclick="toggleSelection(event)">Turchia</a>
-                  <a href="listaSensori?nazione=serbia"
-                  class="country-button" onclick="toggleSelection(event)">Serbia</a>
-                  <a href="listaSensori?nazione=bosniaederzegovina"
-                  class="country-button" onclick="toggleSelection(event)">Bosnia ed Erzegovina</a>
-                  <a href="listaSensori?nazione=croazia"
-                  class="country-button" onclick="toggleSelection(event)">Croazia</a>
-                  <a href="listaSensori?nazione=monaco"
-                  class="country-button" onclick="toggleSelection(event)">Monaco</a>
-                  <a href="listaSensori?nazione=romania"
-                  class="country-button" onclick="toggleSelection(event)">Romania</a>
-                  <a href="listaSensori?nazione=austria"
-                  class="country-button" onclick="toggleSelection(event)">Austria</a>
-                  <a href="listaSensori?nazione=svezia"
-                  class="country-button" onclick="toggleSelection(event)">Svezia</a>
-                  <a href="listaSensori?nazione=slovenia"
-                  class="country-button" onclick="toggleSelection(event)">Slovenia</a>
-                  <a href="listaSensori?nazione=polonia"
-                  class="country-button" onclick="toggleSelection(event)">Polonia</a>
-                  <a href="listaSensori?nazione=germania"
-                  class="country-button" onclick="toggleSelection(event)">Germania</a>
-                  <a href="listaSensori?nazione=finlandia"
-                  class="country-button" onclick="toggleSelection(event)">Finlandia</a>
-                  <a href="listaSensori?nazione=svizzera"
-                  class="country-button" onclick="toggleSelection(event)">Svizzera</a>
-                  <a href="listaSensori?nazione=irlanda"
-                  class="country-button" onclick="toggleSelection(event)">Irlanda</a>
-                  <a href="listaSensori?nazione=ungheria"
-                  class="country-button" onclick="toggleSelection(event)">Ungheria</a>
-                  <a href="listaSensori?nazione=belgio"
-                  class="country-button" onclick="toggleSelection(event)">Belgio</a>
-                  <a href="listaSensori?nazione=norvegia"
-                  class="country-button" onclick="toggleSelection(event)">Norvegia</a>
-                  <a href="listaSensori?nazione=lettonia"
-                  class="country-button" onclick="toggleSelection(event)">Lettonia</a>
-                  <a href="listaSensori?nazione=moldavia"
-                  class="country-button" onclick="toggleSelection(event)">Moldavia</a>
-                  <a href="listaSensori?nazione=liechtenstein"
-                  class="country-button" onclick="toggleSelection(event)">Liechtenstein</a>
-                  <a href="listaSensori?nazione=slovacchia"
-                  class="country-button" onclick="toggleSelection(event)">Slovacchia</a>
-                  <a href="listaSensori?nazione=cechi"
-                  class="country-button" onclick="toggleSelection(event)">Cechia</a>
-                  <a href="listaSensori?nazione=ucraina"
-                  class="country-button" onclick="toggleSelection(event)">Ucraina</a>
-                </div>
+              <div id="selettore-livello" class="container controll ">
+                <!-- Lista dei livelli selezionabili -->
               </div>
             </div>
           <li class="nav-item nav-profile dropdown">
@@ -159,14 +107,75 @@
               <span class="nav-profile-name">{{current_user.nome + ' ' + current_user.cognome}}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="/user">
-                <i class="typcn typcn-cog text-primary"></i>
-                Settings
-                </a>
-                <a class="dropdown-item" href="/logout">
-                <i class="typcn typcn-power text-primary"></i>
-                Logout
-              </a>
+              <button id="openSettings">Open Settings</button> <!-- Bottone per aprire il popup -->
+
+              <script>
+                document.getElementById('openSettings').addEventListener('click', function() {
+                  // Mostra il popup con SweetAlert2
+                  Swal.fire({
+                    title: 'Settings',
+                    html: `
+                      <div class="form-group">
+                        <label for="dropdown">Seleziona una voce:</label>
+                        <select id="dropdown" class="form-control">
+                          <option value="opzione1">Opzione 1</option>
+                          <option value="opzione2">Opzione 2</option>
+                          <option value="opzione3">Opzione 3</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="ste">Seleziona STE:</label>
+                        <select id="ste" class="form-control">
+                          <option value="ste1">STE 1</option>
+                          <option value="ste2">STE 2</option>
+                          <option value="ste3">STE 3</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="dateRange">Seleziona l'intervallo di date:</label>
+                        <input type="text" id="dateRange" class="form-control" placeholder="Seleziona le date" />
+                      </div>
+                    `,
+                    showCancelButton: true,
+                    confirmButtonText: 'Conferma',
+                    cancelButtonText: 'Annulla',
+                    preConfirm: () => {
+                      const dropdownValue = document.getElementById('dropdown').value;
+                      const steValue = document.getElementById('ste').value;
+                      const dateRange = document.getElementById('dateRange').value;
+              
+                      // Passa i dati selezionati alla funzione Flask tramite AJAX
+                      fetch('/selettore', {  // Sostituisci '/process_data' con la tua route Flask
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                          parametro: dropdownValue,
+                          intervallo: steValue,
+                          range_data: dateRange,
+                        })
+                      })
+                      .then(response => response.json())
+                      .then(data => {
+                        // Gestisci la risposta di Flask se necessario
+                        console.log('Response from Flask:', data);
+                      })
+                      .catch(error => {
+                        console.error('Error:', error);
+                      });
+                    },
+                    willOpen: () => {
+                      // Inizializza un date picker per il range di date
+                      flatpickr("#dateRange", {
+                        mode: "range",
+                        dateFormat: "Y-m-d",
+                      });
+                    }
+                  });
+                });
+              </script>
+
             </div>
           </li>
         </ul>
@@ -326,78 +335,127 @@
 
       //Codice realtivo alla generazione della mappa generale con marker cliccabili
      // Ottieni l'elemento della mappa e configura la classe
-var mappa_generale = document.getElementById("mappa_generale");
-mappa_generale.className = "mappa_generale";
+     var mappa_generale = document.getElementById("mappa_generale");
+     mappa_generale.className = "mappa_generale";
+             
+     var comuniLayer = null;
+     var stazioniLayer = null;
+             
+     // Inizializza la mappa
+     var map = L.map('mappa_generale', {
+         doubleClickZoom: false,
+         boxZoom: false,
+         zoomControl: false,
+         keyboard: false,
+     }).setView([40.518599706806775, 15.924462653196347], 9.5);
+     
+     // Aggiungi il layer di base (OpenStreetMap)
+     var Base_Layer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         maxZoom: 19,
+     }).addTo(map);
+     
+     // Funzione per creare un layer GeoJSON
+     function createGeoJSONLayer(url, styleOptions, popupPropertyName) {
+         return fetch(url)
+             .then(response => response.json())
+             .then(data => {
+                 return L.geoJSON(data, {
+                     style: styleOptions,
+                     onEachFeature: function (feature, layer) {
+                         if (feature.properties && feature.properties[popupPropertyName]) {
+                             layer.bindPopup(`${popupPropertyName}: ${feature.properties[popupPropertyName]}`);
+                         }
+                     }
+                 });
+             })
+             .catch(error => {
+                 console.error(`Errore nel caricamento del GeoJSON (${url}):`, error);
+                 return null;
+             });
+     }
+     
+     // Carica i layer GeoJSON
+     Promise.all([
+         createGeoJSONLayer(
+             '/static/geojson/filtered_comuni.geojson',
+             { color: "#ff7800", weight: 2, opacity: 0.65 },
+             'name'
+         ),
+         createGeoJSONLayer(
+             '/static/geojson/stazioni_di_rilevamento.geojson',
+             { color: "#0088ff", weight: 2, opacity: 0.75 },
+             'station_name'
+         )
+     ]).then(([comuni, stazioni]) => {
+         if (!comuni || !stazioni) {
+             console.error("Errore nella creazione dei layer GeoJSON");
+             return;
+         }
+       
+         // Aggiungi i layer alla mappa e assegna alle variabili globali
+         comuniLayer = comuni.addTo(map);
+         stazioniLayer = stazioni;
+       
+         // Definisci i livelli di overlay
+         var livelli_overlay = {
+             "Comuni": comuniLayer,
+             "Stazioni di rilevamento": stazioniLayer
+         };
+       
+         // Crea i controlli manualmente
+         var customControlsDiv = document.getElementById('selettore-livello');
+         Object.keys(livelli_overlay).forEach(nomeLivello => {
+             var checkbox = document.createElement('input');
+             checkbox.type = 'checkbox';
+             checkbox.id = nomeLivello;
+             checkbox.checked = map.hasLayer(livelli_overlay[nomeLivello]); // Check se il layer è visibile
+             checkbox.addEventListener('change', function () {
+                 if (checkbox.checked) {
+                     map.addLayer(livelli_overlay[nomeLivello]);
+                 } else {
+                     map.removeLayer(livelli_overlay[nomeLivello]);
+                 }
+             });
+           
+             var label = document.createElement('label');
+             label.htmlFor = nomeLivello;
+             label.innerText = nomeLivello;
+           
+             var container = document.createElement('div');
+             container.appendChild(checkbox);
+             container.appendChild(label);
+           
+             customControlsDiv.appendChild(container);
+         });
+     });
 
-// Inizializza la mappa con le opzioni esistenti
-var map = L.map('mappa_generale', {
-    doubleClickZoom: false,
-    boxZoom: false,
-    zoomControl: false,
-    keyboard: false,
-}).setView([40.518599706806775, 15.924462653196347], 9.5);
-
-// Aggiungi il layer di base (OpenStreetMap)
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-}).addTo(map);
-
-// Funzione per aggiungere un file GeoJSON alla mappa
-function addGeoJSONLayer(url, styleOptions, popupPropertyName) {
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data, {
-                style: styleOptions,
-                onEachFeature: function (feature, layer) {
-                    // Mostra un popup con la proprietà specificata
-                    if (feature.properties && feature.properties[popupPropertyName]) {
-                        layer.bindPopup(`${popupPropertyName}: ${feature.properties[popupPropertyName]}`);
-                    }
-                }               
-            }).addTo(map);
-        })
-        .catch(error => console.error(`Errore nel caricamento del GeoJSON (${url}):`, error));
-}
-
-// Aggiungi il primo file GeoJSON (Comuni)
-addGeoJSONLayer(
-    '/static/geojson/filtered_comuni.geojson',
-    { color: "#ff7800", weight: 2, opacity: 0.65 }, // Stile per i confini dei comuni
-    'name' // Nome del campo da visualizzare nel popup
-);
-
-// Aggiungi il secondo file GeoJSON (Stazioni di rilevamento)
-addGeoJSONLayer(
-    '/static/geojson/stazioni_di_rilevamento.geojson',
-    { color: "#0088ff", weight: 2, opacity: 0.75 }, // Stile per le stazioni di rilevamento
-    'station_name' // Nome del campo da visualizzare nel popup
-);
-
-
-      function scrollaVersoMappaGenerale() {
-        var mappaGenerale = document.getElementById("mappa_generale");
-    
-        // Calcolo la posizione verticale assoluta del punto centrale della mappa rispetto al documento
-        var posizioneMappaCentrale = mappaGenerale.getBoundingClientRect().top + window.scrollY + (mappaGenerale.clientHeight / 2);
-    
-        // Calcola la posizione verticale della finestra di visualizzazione
-        var posizioneFinestra = window.innerHeight / 2;
-    
-        // Calcola la posizione verticale finale per centrare il punto centrale della mappa nella finestra
-        var posizioneFinale = posizioneMappaCentrale - posizioneFinestra;
-  
-        window.scrollTo({
-          top: posizioneFinale,
-          behavior: 'smooth'
-        });
-      }
-
-      var linkMappaSensori = document.querySelector('a[href="/mappa"]');
-      linkMappaSensori.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollaVersoMappaGenerale();
-      });
+     
+     // Funzione per scrollare verso la mappa
+     function scrollaVersoMappaGenerale() {
+         var mappaGenerale = document.getElementById("mappa_generale");
+     
+         // Calcola la posizione verticale assoluta del punto centrale della mappa rispetto al documento
+         var posizioneMappaCentrale = mappaGenerale.getBoundingClientRect().top + window.scrollY + (mappaGenerale.clientHeight / 2);
+     
+         // Calcola la posizione verticale della finestra di visualizzazione
+         var posizioneFinestra = window.innerHeight / 2;
+     
+         // Calcola la posizione verticale finale per centrare il punto centrale della mappa nella finestra
+         var posizioneFinale = posizioneMappaCentrale - posizioneFinestra;
+     
+         window.scrollTo({
+             top: posizioneFinale,
+             behavior: 'smooth'
+         });
+     }
+     
+     // Collega lo scroll al click sul link
+     var linkMappaSensori = document.querySelector('a[href="/mappa"]');
+     linkMappaSensori.addEventListener('click', function (event) {
+         event.preventDefault();
+         scrollaVersoMappaGenerale();
+     });
+     
     </script>
     <!-- End custom js for this page-->
 
