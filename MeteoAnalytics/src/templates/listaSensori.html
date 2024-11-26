@@ -333,13 +333,13 @@
       {% endfor %}
       
 
-      //Codice realtivo alla generazione della mappa generale con marker cliccabili
-     // Ottieni l'elemento della mappa e configura la classe
      var mappa_generale = document.getElementById("mappa_generale");
      mappa_generale.className = "mappa_generale";
              
      var comuniLayer = null;
      var stazioniLayer = null;
+     var datiStazioni = {{ data | tojson | safe }};
+     console.log(datiStazioni);
              
      // Inizializza la mappa
      var map = L.map('mappa_generale', {

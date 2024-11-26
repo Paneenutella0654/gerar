@@ -6,7 +6,7 @@ from src.dbConnection import  utenti, sensori
 from src import login_manager
 from src.model import utente, sensore
 from src.load_DB import main_load
-
+from src import help_function
 
 from bson.objectid import ObjectId
 from datetime import timedelta
@@ -19,12 +19,14 @@ from flask_login import current_user, login_required , login_user, logout_user
 @login_required
 def listaSensori():
     nazione = request.args.get("nazione")
+    path_file = "C:\\Users\\Gerardo\\Repository\\gerar\\risultato_concatenato.csv"
+    data = help_function.read_csv_to_json(path_file) 
     if nazione:
         listaSensori = main_load.sensoriByNazione(nazione)
         return render_template("listaSensori.html", listaSensori=listaSensori)
     else :
         listaSensori = main_load.RetriveCoordinareSensori()
-        return render_template("listaSensori.html", listaSensori=listaSensori)
+        return render_template("listaSensori.html", listaSensori=listaSensori,data=data)
 
 @app.route("/sensoriPreferiti",methods=["GET", "POST"])
 @login_required
@@ -272,7 +274,6 @@ def visitaeventi():
 def selettore():
     if request.method == "POST":
         dati = request.get_json()
-        
         parametro_selezionato = dati.get("parametro")
         intervallo_temporale = dati.get("intervallo")
         range_data = dati.get("range_data")
@@ -280,3 +281,10 @@ def selettore():
         #return render_template("listaSensori.html")
         return jsonify({'status': 'success', 'message': 'Dati ricevuti correttamente!'})
     return render_template("listaSensori.html")
+
+
+@app.route("/test", methods=["GET", "POST"])
+def test():
+    path_file = "C:\\Users\\Gerardo\\Repository\\gerar\\risultato_concatenato.csv"
+    data = help_function.read_csv_to_json(path_file) 
+    return render_template("test.html",data = data)

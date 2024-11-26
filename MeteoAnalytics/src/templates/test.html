@@ -10,9 +10,10 @@
    
     <script>
         // Pass the value of sensore as a JavaScript variable
-        var sensore2 = JSON.parse('{{ listaSensori | tojson }}');
-        console.log(sensore2); 
+        var sensore2 = {{ data | tojson | safe }};
+        //console.log(sensore2.data[0]["Benzene (µg/m³)"]); 
 
-        // You can now manipulate the data as needed in JavaScript
-        // For example, display it in the HTML
+        sensore2.data.forEach(row => {
+            console.log(row["Benzene (µg/m³)"]);
+        });
     </script>
