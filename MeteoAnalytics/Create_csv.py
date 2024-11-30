@@ -27,7 +27,6 @@ def genera_date_ore(data_inizio, num_ore):
     return date_list
 
 def concatena_csv_files(cartella_path, testo_colonna1, data_inizio):
-
     cartella = Path(cartella_path)
     
     dati_files = {}
@@ -53,7 +52,6 @@ def concatena_csv_files(cartella_path, testo_colonna1, data_inizio):
                 # Aggiorna il numero massimo di righe
                 max_righe = max(max_righe, len(df["Media"]))
                 
-                
             else:
                 print(f"{file_csv.name} non contiene tutte le colonne necessarie")
     
@@ -61,9 +59,16 @@ def concatena_csv_files(cartella_path, testo_colonna1, data_inizio):
         print("Nessun dato valido trovato nei file CSV")
         return None
     
+    # Valori fissi per latitudine e longitudine
+    latitudine = 40.313888  # Sostituisci con il valore reale della latitudine
+    longitudine = 15.904444  # Sostituisci con il valore reale della longitudine
 
+    
+    # Crea il DataFrame del risultato
     risultato = pd.DataFrame({
-        'Stazione': [testo_colonna1] * max_righe
+        'Stazione': [testo_colonna1] * max_righe,
+        'Latitudine': [latitudine] * max_righe,  # Colonna Latitudine
+        'Longitudine': [longitudine] * max_righe  # Colonna Longitudine
     })
     
     risultato['Data_Ora'] = genera_date_ore(data_inizio, max_righe)
@@ -72,15 +77,17 @@ def concatena_csv_files(cartella_path, testo_colonna1, data_inizio):
         nome_colonna = f"{param_nome} ({dati['udm']})"
         
         valori = dati['valori'] + [None] * (max_righe - len(dati['valori']))
-
         risultato[nome_colonna] = valori
     
     return risultato
 
+
+
+
 def main():
 
-    cartella = "C:\\Users\\gerar\\OneDrive\\Desktop\\dati_GIS\\Viggiano"  
-    testo_colonna1 = "Nome_Stazione"  
+    cartella = "C:\\Users\\gerar\\Clone Repo\\gerar\\MeteoAnalytics\\Dati_Arpa_Sensori\\2022\\Viggiano"  
+    testo_colonna1 = "Viggiano"  
     data_inizio = datetime(2022, 1, 1, 1, 0)  
     
     print(f"Inizio elaborazione dalla cartella: {cartella}")
