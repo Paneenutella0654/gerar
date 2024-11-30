@@ -281,6 +281,8 @@
     <script src="/static/js/template.js"></script>
     <script src="/static/js/settings.js"></script>
     <script src="/static/js/todolist.js"></script>
+    <script src="/static/javascript/helper_function.js"></script>
+    <script src="/static/javascript/heatmap-utils.js"></script>
     <!-- endinject -->
     <!-- plugin js for this page -->
     <script src="/static/vendors/progressbar.js/progressbar.min.js"></script>
@@ -340,6 +342,9 @@
      var stazioniLayer = null;
      var datiStazioni = {{ data | tojson | safe }};
      console.log(datiStazioni);
+
+     let test = prepareData(datiStazioni.data);
+     console.log(test);
              
      // Inizializza la mappa
      var map = L.map('mappa_generale', {
