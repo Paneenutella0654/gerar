@@ -291,6 +291,12 @@
     <!-- Custom js for this page-->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
       integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script> -->
+    <script src="/static/js/HeatLayer.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
 
     <script>
       function rimandaAggiunta()
@@ -341,10 +347,8 @@
      var comuniLayer = null;
      var stazioniLayer = null;
      var datiStazioni = {{ data | tojson | safe }};
-     console.log(datiStazioni);
 
-     let test = prepareData(datiStazioni.data);
-     console.log(test);
+     var test = prepareData(datiStazioni.data);
              
      // Inizializza la mappa
      var map = L.map('mappa_generale', {
@@ -378,7 +382,55 @@
                  return null;
              });
      }
-     
+
+      function filterDataByThreshold(data, threshold) {
+        return data.filter(point => point[2] <= threshold); // Mantieni solo i punti con valore <= soglia
+      }
+
+    const threshold = 4;
+    const filteredData = filterDataByThreshold(test, threshold);
+
+    function normalizzaConMetodoStatistico(dati) {
+      // Estrai i valori (terzo elemento di ogni array)
+      const valori = dati.map(d => d[2]);
+  
+      // Calcolo della media e deviazione standard
+      const media = valori.reduce((a, b) => a + b, 0) / valori.length;
+      const varianza = valori.reduce((sq, n) => sq + Math.pow(n - media, 2), 0) / valori.length;
+      const devStandard = Math.sqrt(varianza);
+  
+      // Normalizzazione con metodo Z-score modificato
+      return dati.map(dato => {
+          // Calcolo Z-score
+          const zScore = (dato[2] - media) / devStandard;
+          
+          // Mappatura non lineare per evidenziare le differenze
+          const normalizedValue = 0.5 + (zScore / (2 * Math.abs(zScore) + 1));
+          
+          return [
+              dato[0],  // latitudine 
+              dato[1],  // longitudine
+              Math.max(0.1, Math.min(1, normalizedValue))
+          ];
+      });
+  }
+
+    const heatData2 = normalizzaConMetodoStatistico(filteredData);
+    console.log(heatData2);
+
+    var heat = L.heatLayer(heatData2, {
+      radius: 80,
+      blur: 30,
+      max: 1.0,
+      gradient: {
+          0.1: 'green',    // Valori molto bassi
+          0.3: 'yellowgreen', // Valori bassi
+          0.5: 'yellow',   // Valori medi
+          0.7: 'orange',   // Valori alti
+          1.0: 'red'       // Valori critici
+      }
+  }).addTo(map);
+
      // Carica i layer GeoJSON
      Promise.all([
          createGeoJSONLayer(
@@ -404,7 +456,8 @@
          // Definisci i livelli di overlay
          var livelli_overlay = {
              "Comuni": comuniLayer,
-             "Stazioni di rilevamento": stazioniLayer
+             "Stazioni di rilevamento": stazioniLayer,
+             "Heatmap": heat
          };
        
          // Crea i controlli manualmente
@@ -460,7 +513,6 @@
          event.preventDefault();
          scrollaVersoMappaGenerale();
      });
-     
     </script>
     <!-- End custom js for this page-->
 

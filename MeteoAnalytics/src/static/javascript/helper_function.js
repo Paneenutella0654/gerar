@@ -2,10 +2,10 @@ function prepareData(data) {
     // Controlla se i dati sono un array
     if (!Array.isArray(data)) {
         console.error("I dati forniti non sono un array:", data);
-        return {};
+        return [];
     }
 
-    let hourlyData = {};
+    let heatData = [];
 
     data.forEach(row => {
         let timestamp = row["Data_Ora"];
@@ -14,14 +14,13 @@ function prepareData(data) {
         // Salta righe con dati non validi
         if (!timestamp || isNaN(benzene)) return;
 
-        // Latitudine e longitudine fittizi per la demo
-        let latitude = parseFloat(row["Data_Ora"]); 
-        let longitude = parseFloat(row["Data_Ora"]);
+        // Latitudine e longitudine
+        let latitude = parseFloat(row["Latitudine"]); 
+        let longitude = parseFloat(row["Longitudine"]);
 
-        // Crea una nuova chiave per ogni ora
-        if (!hourlyData[timestamp]) hourlyData[timestamp] = [];
-        hourlyData[timestamp].push([latitude, longitude, benzene]);
+        // Aggiungi al dataset per la heatmap
+        heatData.push([latitude, longitude, benzene]);
     });
 
-    return hourlyData;
+    return heatData;
 }

@@ -286,6 +286,6 @@ def selettore():
 
 @app.route("/test", methods=["GET", "POST"])
 def test():
-    path_file = "C:\\Users\\Gerardo\\Repository\\gerar\\risultato_concatenato.csv"
+    path_file = "/Users/gerardo/Documents/gerar/risultato_concatenato.csv"
     data = help_function.read_csv_to_json(path_file) 
-    return render_template("test.html",data = data)
+    return render_template("prova.html",data = data)
