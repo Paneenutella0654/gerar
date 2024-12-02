@@ -86,7 +86,7 @@ def concatena_csv_files(cartella_path, testo_colonna1, data_inizio):
 
 def main():
 
-    cartella = "C:\\Users\\USER\\gerar\\gerar\\MeteoAnalytics\\Dati_Arpa_Sensori\\2022\\Viggiano1"  
+    cartella = "C:\\Users\\USER\\gerar\\gerar\\MeteoAnalytics\\Dati_Arpa_Sensori\\2021\\Viggiano1"  
     testo_colonna1 = "Viggiano1"  
     data_inizio = datetime(2022, 1, 1, 1, 0)  
     
