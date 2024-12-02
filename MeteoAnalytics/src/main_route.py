@@ -20,7 +20,7 @@ from flask_login import current_user, login_required , login_user, logout_user
 def listaSensori():
     nazione = request.args.get("nazione")
     #path_file = "C:\\Users\\Gerardo\\Repository\\gerar\\risultato_concatenato.csv"
-    path_file = "/Users/gerardo/Documents/gerar/risultato_concatenato.csv"
+    path_file = "C:\\Users\\USER\\gerar\\gerar\\risultato_concatenato.csv"
     data = help_function.read_csv_to_json(path_file) 
     if nazione:
         listaSensori = main_load.sensoriByNazione(nazione)
