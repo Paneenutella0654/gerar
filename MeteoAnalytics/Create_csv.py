@@ -86,8 +86,8 @@ def concatena_csv_files(cartella_path, testo_colonna1, data_inizio):
 
 def main():
 
-    cartella = "C:\\Users\\gerar\\Clone Repo\\gerar\\MeteoAnalytics\\Dati_Arpa_Sensori\\2022\\Viggiano"  
-    testo_colonna1 = "Viggiano"  
+    cartella = "C:\\Users\\USER\\gerar\\gerar\\MeteoAnalytics\\Dati_Arpa_Sensori\\2022\\Viggiano1"  
+    testo_colonna1 = "Viggiano1"  
     data_inizio = datetime(2022, 1, 1, 1, 0)  
     
     print(f"Inizio elaborazione dalla cartella: {cartella}")
@@ -95,7 +95,7 @@ def main():
     df_risultato = concatena_csv_files(cartella, testo_colonna1, data_inizio)
     
     if df_risultato is not None:
-        nome_file_output = "risultato_concatenato.csv"
+        nome_file_output = "Viggiano1.csv"
         df_risultato.to_csv(nome_file_output, index=False, encoding='utf-8')
         print(f"\nElaborazione completata. File salvato come: {nome_file_output}")
         print(f"Righe totali: {len(df_risultato)}")
