@@ -60,9 +60,9 @@ def concatena_csv_files(cartella_path, testo_colonna1, data_inizio):
         return None
     
     # Valori fissi per latitudine e longitudine
-    latitudine = 40.313888  # Sostituisci con il valore reale della latitudine
-    longitudine = 15.904444  # Sostituisci con il valore reale della longitudine
-
+    longitudine = 15.722500  # Sostituisci con il valore reale della longitudine
+    latitudine = 41.069444  # Sostituisci con il valore reale della latitudine
+    
     
     # Crea il DataFrame del risultato
     risultato = pd.DataFrame({
@@ -86,16 +86,16 @@ def concatena_csv_files(cartella_path, testo_colonna1, data_inizio):
 
 def main():
 
-    cartella = "C:\\Users\\USER\\gerar\\gerar\\MeteoAnalytics\\Dati_Arpa_Sensori\\2021\\Viggiano1"  
-    testo_colonna1 = "Viggiano1"  
-    data_inizio = datetime(2022, 1, 1, 1, 0)  
+    cartella = "C:\\Users\\USER\\gerar\\gerar\\MeteoAnalytics\\Dati_Arpa_Sensori\\2021\\S_Nicola_di_Melfi"  
+    testo_colonna1 = "S_Nicola_di_Melfi"  
+    data_inizio = datetime(2021, 1, 1, 1, 0)  
     
     print(f"Inizio elaborazione dalla cartella: {cartella}")
 
     df_risultato = concatena_csv_files(cartella, testo_colonna1, data_inizio)
     
     if df_risultato is not None:
-        nome_file_output = "Viggiano1.csv"
+        nome_file_output = "S_Nicola_di_Melfi.csv"
         df_risultato.to_csv(nome_file_output, index=False, encoding='utf-8')
         print(f"\nElaborazione completata. File salvato come: {nome_file_output}")
         print(f"Righe totali: {len(df_risultato)}")
